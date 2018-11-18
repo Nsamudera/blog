@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     email: {
         type: String,
+        unique: true,
         validate: {
             validator: function(value) {
                 return /\w+@+\w+\.\w/.test(value)
@@ -13,6 +14,10 @@ const userSchema = new Schema({
         required: true
     },
     password: {
+        type: String,
+        required: true
+    },
+    name: {
         type: String,
         required: true
     },

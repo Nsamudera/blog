@@ -292,7 +292,7 @@ Content:
 
 # Route | HTTP | Description
 ------|------|------------
-/blog/comment | GET | get all comments
+/blog/comments | GET | get all comments
 
 ## Data Params
 None
@@ -324,7 +324,7 @@ Content:
 
 # Route | HTTP | Description
 ------|------|------------
-/blog/comment/add | POST | create a comment
+/blog/comments/add | POST | create a comment
 
 ## Data Params
 comment: "I love your article"
@@ -371,7 +371,7 @@ Content:
 
 # Route | HTTP | Description
 ------|------|------------
-/blog/comment/delete | POST | delete a comment
+/blog/comments/delete | POST | delete a comment
 
 ## Data Params
 commentId: "1234567"
