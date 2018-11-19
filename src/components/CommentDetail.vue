@@ -22,8 +22,10 @@
               {{comment.comment}}
             </div>
             <div>
-              <button class="btn btn-sm">Edit</button> |
-              <button class="btn btn-sm">Delete</button>
+              <router-link :to="`/dashboard/comments/${comment._id}`">
+                <button class="btn btn-sm">Edit</button> |
+              </router-link>
+              <button class="btn btn-sm" @click.prevent="remove(comment._id)">Delete</button>
             </div>
           </div>
           <div v-else>
@@ -60,6 +62,7 @@ export default {
   methods: {
     addComment: function() {
       let token = localStorage.getItem("token");
+      console.log(this.$route.params.articleId)
       axios({
         method: "post",
         url: "http://xavier-blog-server.thenile.online:3000/blog/comments/add",
@@ -78,10 +81,16 @@ export default {
           this.error_msg = err.response.data.message;
           this.error_status = true;
         });
-    }
-  },
-  created: function(){
+    },
+  }, 
+  mounted: function(){
       this.commentsList = this.comments
+  },
+  watch: {
+    comments: function(val) {
+      console.log(val)
+      this.commentsList = this.comments
+    }
   }
 };
 </script>

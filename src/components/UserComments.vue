@@ -54,7 +54,6 @@ export default {
         headers: { token: token },
       })
       .then(response => {
-          console.log(response.data.data);
           let data = response.data.data
           data.forEach(element => {
             if(element.authorId._id === this.userId) {
