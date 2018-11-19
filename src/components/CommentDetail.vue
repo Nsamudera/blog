@@ -25,7 +25,7 @@
               <router-link :to="`/dashboard/comments/${comment._id}`">
                 <button class="btn btn-sm">Edit</button> |
               </router-link>
-              <button class="btn btn-sm" @click.prevent="remove(comment._id)">Delete</button>
+              <button class="btn btn-sm">Delete</button>
             </div>
           </div>
           <div v-else>
