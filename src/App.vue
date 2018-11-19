@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar :status="loggedStatus"></NavBar>
+    <NavBar :status="loggedStatus" v-on:loggedin="changeStatus"></NavBar>
     <router-view v-on:loggedin="changeStatus"></router-view>
   </div>
 </template>
